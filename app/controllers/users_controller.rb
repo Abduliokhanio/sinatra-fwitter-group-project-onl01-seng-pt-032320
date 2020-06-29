@@ -46,11 +46,22 @@ class UsersController < ApplicationController
   end
 
   get '/users/:slug' do
+<<<<<<< HEAD
     slug = params[:slug]
     @user = User.find_by_slug(slug)
     erb :"users/show"
   end
 
 
+=======
+    @user = User.find_by_slug(params[:slug].to_s)
+    @tweets = []
+    Tweet.all.each do |tweet|
+      @tweets << tweet if tweet.user_id == @user.id
+    end
+    erb :'/tweets/tweets'
+  end
+
+>>>>>>> 8596dea2864f8caf209db2aa8118d785a2440e88
 
 end

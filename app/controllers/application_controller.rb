@@ -13,4 +13,7 @@ class ApplicationController < Sinatra::Base
     "Welcome to Fwitter"
   end
 
+  get '/' do
+  end
+
 end
